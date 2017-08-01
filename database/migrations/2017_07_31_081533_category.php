@@ -16,7 +16,7 @@ class Category extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->index();
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
         });
     }
 

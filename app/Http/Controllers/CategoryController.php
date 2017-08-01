@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Category;
 class CategoryController extends Controller
 {
     /**
@@ -34,7 +34,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
+        $category = new Category();
+        $category->name=$request->name;
+        $category->save();
+        return 'success';
     }
 
     /**
@@ -80,5 +84,23 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function getAll()
+    {
+       $category = Category::all();
+       return $category;
+    }
+    public function sort($value)
+    {
+        //return $value;
+       $category = Category::orderBy($value)->get();
+       return $category;
+
+    }
+    public function searchCategory($search)
+    {
+        $category = Category::where('name','LIKE',"$search%")->get();
+        return $category;
+        
     }
 }

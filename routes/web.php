@@ -17,5 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::resource('category','CategoryController');
-
+Route::get('/getcategory','CategoryController@getAll');
+Route::get('/sortcategory/{value}','CategoryController@sort');
+Route::get('/searchcategory/{value}','CategoryController@searchCategory');
 Route::get('/home', 'HomeController@index')->name('home');
