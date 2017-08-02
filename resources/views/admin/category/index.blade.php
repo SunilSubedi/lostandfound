@@ -97,7 +97,7 @@
      			this.getCategory();
      		}
            vm = this;
-           axios.get('/searchcategory/'+vm.search_value).then(function(response){
+             axios.get('/searchcategory/'+vm.search_value).then(function(response){
             vm.categories = response.data;
             if(vm.categories=="")
             {

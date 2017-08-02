@@ -8,8 +8,6 @@
 {{Form::label('name','Category Name')}}
 {{Form::text('name',null,['class'=>'form-control','required','v-model'=>'name'])}}<br>
 {{Form::button('Add',['class'=>'btn btn-success','v-on:click'=>'addCategory'])}}
-
-<p v-text="name"></p>
 </div>
 @endsection
 @section('script')

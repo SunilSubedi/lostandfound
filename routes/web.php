@@ -21,3 +21,4 @@ Route::get('/getcategory','CategoryController@getAll');
 Route::get('/sortcategory/{value}','CategoryController@sort');
 Route::get('/searchcategory/{value}','CategoryController@searchCategory');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('sub_category','SubCategoryController');
