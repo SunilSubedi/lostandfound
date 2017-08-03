@@ -13,9 +13,13 @@ class SubCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public funtion __construct()
+    {
+        $this->middleware('auth:admins');
+    }
     public function index()
     {
-        //
+        return view('admin.sub_category.index');
     }
 
     /**
@@ -87,5 +91,20 @@ class SubCategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function getAll()
+    {
+        $subcategories = Sub_Category::with('category')->orderBy('id','desc')->get();
+        return $subcategories;
+    }
+    public function sort($value)
+    {
+        $subcategories = Sub_Category::with('category')->orderBy($value)->get();
+        return $subcategories;
+    }
+    public function searchSubCategory($value)
+    {
+        $subcategories = Sub_Category::with('category')->where('name','like',"$value%")->get();
+        return $subcategories;
     }
 }
