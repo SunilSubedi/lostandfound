@@ -27,20 +27,22 @@
                                         </a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://jskrishna.com/work/merkury/images/user-pic.jpg" alt="user">
-                                            <b class="caret"></b></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">                                             <b class="caret"></b> <span>{{Auth::user()->name}}</span></a>
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <div class="navbar-content">
-                                                    <span>Sunil Subedi</span>
+                                                   
                                                     <p class="text-muted small">
-                                                        sunilsubedi9@gmail.com
+                                                        {{Auth::user()->email}}
                                                     </p>
                                                     <div class="divider">
                                                     </div>
                                                     <a href="#" class="view btn-sm active">View Profile</a>
                                                 </div>
+                                                <div class="divider"></div>
+                                                   <div><a href="{{route('admin.logout')}}"><strong>Logout</strong></a></div>
                                             </li>
+
                                         </ul>
                                     </li>
                                 </ul>

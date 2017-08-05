@@ -896,6 +896,7 @@ window.Vue = __webpack_require__(36);
 
 Vue.component('example', __webpack_require__(37));
 Vue.component('test', __webpack_require__(40));
+Vue.component('navigation', __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/Navigation.vue\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
 
 var app = new Vue({
   el: '#app'

@@ -13,7 +13,7 @@ class SubCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public funtion __construct()
+    public function __construct()
     {
         $this->middleware('auth:admins');
     }
@@ -101,10 +101,5 @@ class SubCategoryController extends Controller
     {
         $subcategories = Sub_Category::with('category')->orderBy($value)->get();
         return $subcategories;
-    }
-    public function searchSubCategory($value)
-    {
-        $subcategories = Sub_Category::with('category')->where('name','like',"$value%")->get();
-        return $subcategories;
-    }
+    }   
 }

@@ -14,6 +14,7 @@
 
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}"/>
     @yield('style_sheet')
 
 
@@ -21,7 +22,10 @@
 <body>
    <div class="container-fluid display-table">
         <div class="row display-table-row">
+           <div id="nave">
             @include('admin.admin_parts.navigation');
+            </div>
+
             <div class="col-md-10 col-sm-11 display-table-cell v-align">
                 <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
                 @include('admin.admin_parts.search');
@@ -41,5 +45,6 @@
 
 </body>
   <script type="text/javascript" src=" {{ asset('js/app.js')}}"></script>
+  <script type="text/javascript" src="{{ asset('js/nav.js')}}"></script>
   @yield('script')
 </html>

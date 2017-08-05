@@ -1,0 +1,18 @@
+.sub
+{
+	
+	font-size: 12px;
+
+}
+
+  .fade-enter-active, .fade-leave-active 
+ {
+ 	transition: opacity .5s;
+ 	 border-color:red;
+
+ }
+ .fade-enter,.fade-leave-to
+ {
+   opacity:0;
+
+ }
